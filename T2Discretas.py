@@ -11,10 +11,23 @@ def encontrarPalabras(alfabeto, largo):
             if words[j] == words[j+1]:
                 print (words[j])
         d[i] = words
-        #print(i)
+        print(i)
     return d[largo]
 
-n=25
-print(float((n^4))/len(encontrarPalabras(["a","jaj","sk"],n)))
 
 
+
+#n=4
+#print(encontrarPalabras(["a","jaj","sk"],n))
+
+def conteo(n):
+    lista=[None]*(n+1)
+    lista[0]=1
+    lista[1]=1
+    lista[2]=2
+    for x in range(3,n+1):
+        lista[x]=lista[x-1]+lista[x-2]+lista[x-3]
+    return lista[n]
+
+n=1000
+print(float(4^n)/conteo(n))
